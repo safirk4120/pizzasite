@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crust & Craft | Wood-Fired Neapolitan Pizza</title>
+<meta name="description" content="72-hour fermented dough, San Marzano tomatoes, 900°F wood-fired oven. Build your own pie and order online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Top Status Bar -->
+<div class="status-bar">
+  <span>Fresh wood-fired pizza &bull; Free delivery over $30</span>
+  <span id="openStatus" class="status-badge">Checking hours…</span>
+</div>
+
+<!-- Navbar -->
+<header class="navbar">
+  <a href="#top" class="logo">Crust <span>&amp; Craft</span></a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#menu">Menu</a>
+    <a href="#customizer">Build Your Own</a>
+    <a href="#reviews">Reviews</a>
+    <button id="cartBtn" class="btn-cart" aria-haspopup="true" aria-controls="cartDrawer" aria-expanded="false">
+      Cart <span class="cart-count-pill"><span id="cartCount">0</span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="tagline">Authentic Neapolitan Style</span>
+      <h1>Hand-tossed. Wood-fired. Ready in 90 seconds.</h1>
+      <p>72-hour fermented dough, imported San Marzano tomatoes, and a 900°F oven that leaves every crust properly leopard-spotted.</p>
+      <div class="hero-cta-group">
+        <a href="#customizer" class="btn-primary">Build Your Pizza</a>
+        <a href="#menu" class="btn-ghost">See the Menu</a>
+      </div>
+    </div>
+    <div class="hero-stat" aria-hidden="true">
+      <span class="stat-number">900°F</span>
+      <span class="stat-label">Oven, 90 sec bake</span>
+    </div>
+  </section>
+
+  <!-- Menu teaser anchor -->
+  <section id="menu" class="menu-section">
+    <div class="section-heading">
+      <span class="eyebrow">From the Oven</span>
+      <h2>House Favorites</h2>
+    </div>
+    <div class="menu-grid">
+      <article class="menu-card">
+        <h3>Margherita</h3>
+        <p>San Marzano tomato, fior di latte, basil, olive oil.</p>
+        <span class="menu-price">$15</span>
+      </article>
+      <article class="menu-card">
+        <h3>Diavola</h3>
+        <p>Spicy soppressata, calabrian chili, fresh mozzarella.</p>
+        <span class="menu-price">$18</span>
+      </article>
+      <article class="menu-card">
+        <h3>Funghi e Basilico</h3>
+        <p>Wild mushroom, garlic butter crust, basil, pecorino.</p>
+        <span class="menu-price">$17</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- Interactive Pizza Customizer Section -->
+  <section id="customizer" class="customizer-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Made Your Way</span>
+        <h2>Build Your Own Pizza</h2>
+        <p class="subtitle">Pick a size, crust, and toppings — the price updates as you go.</p>
+      </div>
+
+      <div class="customizer-grid">
+
+        <!-- Interactive Controls -->
+        <div class="builder-controls">
+
+          <!-- Size Selector -->
+          <div class="option-group">
+            <h3><span class="step-num">1</span> Choose Size</h3>
+            <div class="btn-group" id="sizeOptions" role="group" aria-label="Choose pizza size">
+              <button class="opt-btn active" data-type="size" data-name="Medium 12&quot;" data-price="14" aria-pressed="true">Medium 12" <em>$14</em></button>
+              <button class="opt-btn" data-type="size" data-name="Large 16&quot;" data-price="18" aria-pressed="false">Large 16" <em>$18</em></button>
+            </div>
+          </div>
+
+          <!-- Crust Options -->
+          <div class="option-group">
+            <h3><span class="step-num">2</span> Choose Crust</h3>
+            <div class="btn-group" id="crustOptions" role="group" aria-label="Choose crust style">
+              <button class="opt-btn active" data-type="crust" data-name="Classic Neapolitan" data-price="0" aria-pressed="true">Neapolitan</button>
+              <button class="opt-btn" data-type="crust" data-name="Garlic Butter Crust" data-price="2" aria-pressed="false">Garlic Butter <em>+$2</em></button>
+              <button class="opt-btn" data-type="crust" data-name="Gluten-Free" data-price="3" aria-pressed="false">Gluten-Free <em>+$3</em></button>
+            </div>
+          </div>
+
+          <!-- Toppings Checkboxes -->
+          <div class="option-group">
+            <h3><span class="step-num">3</span> Add Toppings <span class="step-note">+$1.50 each</span></h3>
+            <div class="toppings-grid">
+              <label class="topping-checkbox">
+                <input type="checkbox" value="Pepperoni" data-price="1.50">
+                <span>Pepperoni</span>
+              </label>
+              <label class="topping-checkbox">
+                <input type="checkbox" value="Italian Sausage" data-price="1.50">
+                <span>Italian Sausage</span>
+              </label>
+              <label class="topping-checkbox">
+                <input type="checkbox" value="Mushrooms" data-price="1.50">
+                <span>Mushrooms</span>
+              </label>
+              <label class="topping-checkbox">
+                <input type="checkbox" value="Fresh Basil" data-price="1.50">
+                <span>Fresh Basil</span>
+              </label>
+              <label class="topping-checkbox">
+                <input type="checkbox" value="Extra Cheese" data-price="1.50">
+                <span>Extra Cheese</span>
+              </label>
+              <label class="topping-checkbox">
+                <input type="checkbox" value="Hot Honey" data-price="1.50">
+                <span>Hot Honey Drizzle</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Preview Card -->
+        <div class="builder-summary">
+          <div class="summary-card">
+            <h3>Your Custom Pie</h3>
+            <div id="summaryDetails" class="summary-details" aria-live="polite">
+              <p><strong>Size:</strong> <span id="summarySize">Medium 12"</span></p>
+              <p><strong>Crust:</strong> <span id="summaryCrust">Classic Neapolitan</span></p>
+              <p><strong>Toppings:</strong> <span id="summaryToppings">None</span></p>
+            </div>
+            <div class="total-price">
+              Total: $<span id="totalPrice">14.00</span>
+            </div>
+            <button id="addToCartBtn" class="btn-primary full-width">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="reviews-section">
+    <div class="section-heading">
+      <span class="eyebrow">Word of Mouth</span>
+      <h2>What People Are Saying</h2>
+    </div>
+    <div class="reviews-grid">
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>The crust has that real leopard char you only get from a proper wood oven. Best pie in the neighborhood.</blockquote>
+        <figcaption>— Maria T.</figcaption>
+      </figure>
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Built my own with hot honey and sausage through the customizer. Order was exactly what I designed.</blockquote>
+        <figcaption>— James O.</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Crust &amp; Craft — Wood-Fired Pizza. This is a demo site built for portfolio purposes.</p>
+</footer>
+
+<!-- Slide-Out Cart Drawer -->
+<div id="cartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartHeading" aria-hidden="true">
+  <div class="cart-header">
+    <h2 id="cartHeading">Your Order</h2>
+    <button id="closeCart" class="close-btn" aria-label="Close cart">&times;</button>
+  </div>
+  <div id="cartItems" class="cart-body">
+    <p class="empty-msg">Your cart is empty.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">Subtotal: $<span id="cartSubtotal">0.00</span></div>
+    <button id="checkoutBtn" class="btn-primary full-width">Checkout Now</button>
+  </div>
+</div>
+<div id="cartOverlay" class="cart-overlay"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
